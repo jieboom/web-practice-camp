@@ -1,12 +1,1014 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+
     <title>网校通</title>
-</head>
-<body>
+    <style>
+        /* ====
+       header
+    =====*/
+     .header{
+         border-bottom: 1px solid #e6e7e7;
+         overflow: auto;
+         
+     }
+     
+    /* logo部分 */
+    .header .header-logo{
+        height: 54px;
+        line-height: 54px;
+        vertical-align: middle;
+        
+    }
+    .header .header-logo .logo-title
+    {
+        color: #21944b;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .header .header-logo .logo-title__other{
+        padding: 3px 6px ;
+        padding-top: 4px;
+
+        background-color: #21944b;
+        color: #fff;
+        font-size: 10px;
+        border-radius: 9px ;
+        vertical-align: middle;
+
+    }
+
+    /* 导航栏 */
+    .header-navbar .header-navbar__list{
+        
+        border-bottom: 0px;
+        
+    }
+    .header-navbar .header-navbar__list li a{
+        height: 54px;
+        line-height: 54px;
+        padding-top: 0;
+        padding-bottom: 0;
+        border: 0;
+        color: #333;
+    }
+    .header-navbar .header-navbar__list li.active a{
+        padding-top: 0;
+        padding-bottom: 0;
+        border: 0;
+        color: #3ba8f0;
+
+    }
+    .header-navbar .header-navbar__list li a:hover{
+                color: #3ba8f0;
+                background-color: #fff;
+    }
+
+    /* 其他信息 */
+    .header-other {
+        height: 54px;
+        display: flex;
+        align-items: center;
+    }
+    .header-other>div{
+        width: 50%;
+    }
+    .header-other .other-info{
+        justify-content: space-around;
+    }
+    .header-other .other-info .other-info-header{
+       display: inline-block;
+       position: relative;
+    }
+    .other-info-nickname{
+        padding-left: 5px;
+        font-size: 12px;
+    }
+    .header-other .other-info .other-info-header .header__notice{
+        position: absolute;
+        top: 4px;
+        left: 27px;
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: red;
+    }
+
+    @media screen and (max-width:992px){
+        
+     .col-lg-2{
+         position: absolute;
+         top: 0;
+         right: 0;
+         margin-right: 15%;
+         min-width: 0;
+         padding: 5px 0;
+     }
+     .header .container{
+         position: relative;
+     }
+     .header{
+         overflow: hidden;
+     }
+    }
+
+    /* ===
+      页面主体
+        === */
+
+        /* 侧边栏标题 */
+        .main .left-aside .left-aside-title{
+            position: relative;
+              margin-top: 10px;
+              height: 65px;
+              line-height: 65px;
+
+              
+        }
+        .main .left-aside .left-aside-title span{
+                 padding-left: 10px;
+                 color: #999;
+                 font-size: 16px;
+        }
+        .main .left-aside .left-aside-title .aside-other{
+            position: absolute;
+            right: 5px;;
+
+        }
+       
+       /* 侧边栏列表 */
+       .main .left-aside{
+           width: 85%;
+           
+       }
+       .main .left-aside .left-aside-list{
+           margin-top: 15px;
+           border-right: 1px solid #ddd;
+           height: 550px;
+       }
+       .main .left-aside .left-aside-list .list-group-item {
+           border: 0;
+           padding: 20px;
+       }
+       .main .left-aside .left-aside-list .list__active{
+        border-left: 2px solid #3ba8f0; 
+        background-color: #f4f5f5;
+
+       }
+       .main .left-aside .left-aside-list .list-group-item a{
+           color: #333;
+           text-decoration: none;
+       }
+       .main .left-aside .left-aside-list .list-group-item:hover{
+        border-left: 2px solid #3ba8f0; 
+        background-color: #f4f5f5;
+        color: #3ba8f0;
+
+       }
+       .main .left-aside .left-aside-list .list-group-item:hover a{
+           color: #3ba8f0;
+       }
+       .main .left-aside .left-aside-list .list__active a{
+           color: #3ba8f0;
+       }
+       .main .left-aside .left-aside-list .list-group-item a img{
+           vertical-align: text-top;
+           padding-right: 10px;
+       }
+    /* 右侧内容区域 */
+    .right-content{
+        margin-left: -35px;
+    }
+    /* 内容头部区域 */
+    .right-content .content-header{
+        height: 75px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #e6e7e7;
+    }
+    .right-content .content-header {
+              height: 75px;
+    }
+    .content-header__myclass{
+        margin-top: 20px;
+        height: 55px;
+        line-height: 55px;
+    }
+    .content-header__pre{
+        height: 75px;
+        display: flex;
+        align-items: center;
+
+    }
+    .content-header__pre a{
+        padding: 10px;
+        color: #fff;
+        background-color:#3ca8f0;
+        text-decoration: none;
+    }
     
+    /* 内容标题区域 */
+    .content-classname__box{
+        height: 76px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .content-classname__box .content-classname{
+        font-size: 16px;
+        color: #333;
+    }
+    .content-search{
+        position: absolute;
+        top: cacl(50% - 14.5px);
+        right: 40px;
+    }
+    .content-search .content-search__input{
+        width: 196px;
+        height: 29px;
+        line-height: 29px;
+        border: 1px solid #3ba8f0;
+
+        font-size: 11px;
+        color: #cecece;
+        text-indent: 5px;
+        
+
+    }
+    .content-search__btn{
+        position: absolute;
+        top: 0;
+        left: 196px;
+        display: inline-block;
+        width: 40px;
+        height: 29px;
+        line-height: 29px;
+        color: #fff;
+        background-color: #3ba8f0;
+        vertical-align: middle;
+        text-align: center;
+        
+    }
+
+    /* 内容主题区域 */
+     .content-main{
+         border-top: 1px solid #ddd;
+         border-left: 1px solid #ddd;
+         height: 500px;
+     }
+     .content-main .main-tab .tabs-list{
+         padding: 0;
+         margin: 0;
+         list-style: none;
+         display: flex;
+         background-color: #f5f5f5;
+         border-bottom: 1px solid #ddd;
+     }
+     .content-main .main-tab .tabs-list a{
+         display: inline-block;
+         width: 140px;
+         height: 28px;
+         line-height: 28px;
+         text-align: center;
+         text-decoration: none;
+         color: #666;
+     }
+     .content-main .main-tab .tabs-list a:hover{
+         color: #3ba8f0;
+         background-color: #fff;
+     }
+     .content-main .main-tab .active a{
+         color: #3ba8f0;
+         background-color: #fff;
+     }
+     
+     
+      /* 主体内容区域 */
+
+      /* 以老师板块为主 */
+      .main-list__box{
+          display: none;
+      }
+       .active{
+            display: block;
+       }
+      
+    .content-main .main-list .main-list_container{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 10px;
+        padding-right: 0;
+
+
+    }
+    .content-main .main-list   .list-item__box .all{
+         display: none;
+    }
+    .main-list__item{
+        margin-right: 9px;
+        margin-bottom: 10px;
+    }
+    .content-main .main-list .list-item__box{
+        border: 1px solid #ddd;
+        
+    }
+    .content-main .main-list .item-image_box{
+        width: 130px;
+        height: 115px;
+
+    }
+    .content-main .main-list .item-image_box img{
+        width: 100%;
+        height: 100%;
+    }
+    .content-main .main-list .list-item__bd{
+        position: relative;
+        width: 130px;
+        height: 115px;
+    }
+    .content-main .main-list .part{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        padding: 0;
+
+        
+    }
+    .content-main .main-list .item-label__box .item-label__teacher{
+        
+        display: inline-block;
+        height: 20px;
+        line-height: 21px;
+        padding:0 4px;
+        color: #fff;
+        background-color: #f99d43;
+        font-size: 12px;
+
+    }
+    .content-main .main-list .item-label__box .item-label__admin{
+        display: inline-block;
+        height: 20px;
+        line-height: 21px;
+        padding:0 4px;
+        color: #fff;
+        background-color: #fa4b5b;
+        font-size: 12px;
+    }
+    .content-main .main-list .item-label__box .item-label__headmaster{
+        display: inline-block;
+        height: 20px;
+        line-height: 21px;
+        padding:0 4px;
+        color: #fff;
+        background-color: #f96543;
+        font-size: 12px;
+    }
+    .content-main .main-list .item-name{
+        display: inline-block;
+        width: 100%;
+        padding: 5px;
+
+        text-align: center;
+        color: #333;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    
+    /* 悬浮态的卡片展示 */
+    .content-main .main-list .list-item__box:hover .part{
+        display: none;
+    }
+    .content-main .main-list .list-item__box:hover .item-image_box{
+        display: none;
+    }
+    .content-main .main-list .list-item__box:hover .all{
+        width: 130px;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 6px 5px;
+        padding-right: 0;
+        transition: all .5s ease-in-out;
+
+       
+
+
+    }
+    .content-main .main-list .list-item__box:hover .all span{
+       margin-right: 6px;
+       margin-bottom: 5px;
+      
+    }
+    
+
+    /* 学生板块样式重构 */
+    .content-main .main-list .student .item-label__box .item-label__represent{
+        display: inline-block;
+        height: 20px;
+        line-height: 21px;
+        padding:0 4px;
+        color: #fff;
+        background-color: #4f92ff;
+        font-size: 12px;
+    }
+    .content-main .main-list .student .item-label__box .item-label__monitor{
+        display: inline-block;
+        height: 20px;
+        line-height: 21px;
+        padding:0 4px;
+        color: #fff;
+        background-color: #307efe;
+        font-size: 12px;
+    }
+
+    /* 家长板块样式重构 */
+    .content-main .main-list .student .item-label__box .item-label__parent{
+        display: inline-block;
+        height: 20px;
+        line-height: 21px;
+        padding:0 4px;
+        color: #fff;
+        background-color: #5ab76e;
+        font-size: 12px;
+    }
+
+    
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="container">
+                <!-- header logo -->
+                <div class="col-lg-3">
+                    <div class="header-logo">
+                        <img src="../images/logo.png" alt="logo">
+                        <span class="logo-title">福建省教育信息化统一平台</span>
+                        <span class="logo-title__other">网校通</span>
+                    </div>
+
+
+
+                </div>
+                <!-- header 导航栏区域 -->
+                <div class="col-lg-7 col-md-9">
+                    <div class="header-navbar">
+                        <nav>
+                            <ul class=" nav nav-tabs header-navbar__list">
+
+                                <li>
+                                    <a href="#">首页</a>
+                                </li>
+                                <li class="active">
+                                    <a href="#">教学管理</a>
+                                </li>
+                                <li>
+                                    <a href="#">学习</a>
+                                </li>
+                                <li>
+                                    <a href="#">资源超市</a>
+                                </li>
+                                <li>
+                                    <a href="#">教育应用</a>
+                                </li>
+                                <li>
+                                    <a href="#">新闻</a>
+                                </li>
+                                <li>
+                                    <a href="#">名师名校</a>
+                                </li>
+                                <li>
+                                    <a href="#">新功能</a>
+                                </li>
+
+
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+
+                <!-- header的其他区域 -->
+                <div class="col-lg-2 col-md-3 ">
+                    <div class="header-other">
+                        <div class="other-search">
+                            <img src="../images/search.png" alt="">
+                        </div>
+                        <div class="other-info">
+                            <div class="other-info-header">
+                                <img src="../images/header.png" alt="">
+                                <i class="header__notice"></i>
+                            </div>
+                            <span class="other-info-nickname">Coco</span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </header>
+    <div class="main">
+        <div class="container">
+            <!-- 左侧的侧边栏区域 包括个人中心的分类导航区域 -->
+            <div class="col-md-3">
+                <div class="left-aside">
+                    <div class="left-aside-title">
+                        <a href="#" class="aside-pre">
+                            <img src="../images/center-left.png" alt="">
+
+                        </a>
+                        <span>个人中心</span>
+                        <a href="#" class="aside-other">
+                            <img src="../images/center-right.png" alt="">
+                        </a>
+                    </div>
+                    <ul class="left-aside-list list-group">
+                        <li class="list-group-item"><a href="#">
+                                <img src="../images/center-list-1.png" alt="">
+                                其他内容</a></li>
+                        <li class="list-group-item"><a href="#">
+                                <img src="../images/center-list-2.png" alt="">
+                                其他内容</a></li>
+                        <li class="list-group-item list__active"><a href="#">
+                                <img src="../images/center-list-4.png" alt="">
+                                我的班级</a></li>
+                        <li class="list-group-item"><a href="#">
+                                <img src="../images/center-list-3.png" alt="">
+                                其他内容</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 右侧的内容区域  -->
+            <div class="col-md-9">
+                <div class="right-content">
+
+                    <!-- 内容区域的头部 -->
+                    <div class="content-header">
+                        <div class="content-header__myclass">我的班级</div>
+                        <div class="content-header__pre"><a href="#">
+                                返回上一级
+                            </a></div>
+                    </div>
+                    <!-- 内容区域的标题区域 -->
+                    <div class="content-classname__box">
+                        <span class="content-classname">
+                            折纸兴趣班
+                        </span>
+                        <div class="content-search">
+                            <form action="">
+                                <input type="text" class="content-search__input" placeholder="快捷查询">
+                                <i class="content-search__btn iconfont icon-search_light"></i>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 内容区的主体区域 -->
+                    <div class="content-main">
+                        <div class="main-tab">
+                              <ul class="tabs-list">
+                                  <li class="tabs-list__item active"><a href="#">所有老师(12)</a></li>
+                                  <li class="tabs-list__item"><a href="#">所有学生(10)</a></li>
+                                  <li class="tabs-list__item"><a href="#">所有家长(10)</a></li>
+                              </ul>
+
+                        </div>
+                        <div class="main-list">
+                           <div class="main-list__box active teacher">
+                                <ul class="main-list_container  " >
+                                        <li class="main-list__item">
+                                            <div class="list-item__box">
+                                                <div class="list-item__bd">
+                                                        <div class="item-image_box">
+                                                                <img src="../images/teacher-header_02.png" alt="">
+                                                        </div>
+                                                        <div class="item-label__box part">
+                                                            <span class="item-label__teacher">英语老师</span>
+                                                            <span class="item-label__admin">管理员</span>
+                                                        </div>
+                                                        <div class="item-label__box all">
+                                                                 <span class="item-label__headmaster" >班主任</span>
+                                                                 <span class="item-label__teacher">英语</span>
+                                                                 <span class="item-label__teacher">数学</span>
+                                                                 <span class="item-label__teacher">政治</span>
+                                                                 <span class="item-label__teacher">信息与技术</span>
+                                                                <span class="item-label__teacher">英语老师</span>
+                                                                 <span class="item-label__admin">管理员</span>
+                                                            </div>
+                                                        
+                                                </div>
+                                                <div class="list-item__ft">
+                                                    <span class="item-name">
+                                                        刘云
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="main-list__item">
+                                                <div class="list-item__box">
+                                                    <div class="list-item__bd">
+                                                            <div class="item-image_box">
+                                                                    <img src="../images/teacher-header_02.png" alt="">
+                                                            </div>
+                                                            <div class="item-label__box part">
+                                                                <span class="item-label__teacher">英语老师</span>
+                                                                <span class="item-label__admin">管理员</span>
+                                                            </div>
+                                                            <div class="item-label__box all">
+                                                                     <span class="item-label__headmaster" >班主任</span>
+                                                                     <span class="item-label__teacher">英语</span>
+                                                                     <span class="item-label__teacher">数学</span>
+                                                                     <span class="item-label__teacher">政治</span>
+                                                                     <span class="item-label__teacher">信息与技术</span>
+                                                                    <span class="item-label__teacher">英语老师</span>
+                                                                     <span class="item-label__admin">管理员</span>
+                                                                </div>
+                                                            
+                                                    </div>
+                                                    <div class="list-item__ft">
+                                                        <span class="item-name">
+                                                            刘云
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="main-list__item">
+                                                    <div class="list-item__box">
+                                                        <div class="list-item__bd">
+                                                                <div class="item-image_box">
+                                                                        <img src="../images/teacher-header_02.png" alt="">
+                                                                </div>
+                                                                <div class="item-label__box part">
+                                                                    <span class="item-label__teacher">英语老师</span>
+                                                                    <span class="item-label__admin">管理员</span>
+                                                                </div>
+                                                                <div class="item-label__box all">
+                                                                         <span class="item-label__headmaster" >班主任</span>
+                                                                         <span class="item-label__teacher">英语</span>
+                                                                         <span class="item-label__teacher">数学</span>
+                                                                         <span class="item-label__teacher">政治</span>
+                                                                         <span class="item-label__teacher">信息与技术</span>
+                                                                        <span class="item-label__teacher">英语老师</span>
+                                                                         <span class="item-label__admin">管理员</span>
+                                                                    </div>
+                                                                
+                                                        </div>
+                                                        <div class="list-item__ft">
+                                                            <span class="item-name">
+                                                                刘云
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="main-list__item">
+                                                        <div class="list-item__box">
+                                                            <div class="list-item__bd">
+                                                                    <div class="item-image_box">
+                                                                            <img src="../images/teacher-header_02.png" alt="">
+                                                                    </div>
+                                                                    <div class="item-label__box part">
+                                                                        <span class="item-label__teacher">英语老师</span>
+                                                                        <span class="item-label__admin">管理员</span>
+                                                                    </div>
+                                                                    <div class="item-label__box all">
+                                                                             <span class="item-label__headmaster" >班主任</span>
+                                                                             <span class="item-label__teacher">英语</span>
+                                                                             <span class="item-label__teacher">数学</span>
+                                                                             <span class="item-label__teacher">政治</span>
+                                                                             <span class="item-label__teacher">信息与技术</span>
+                                                                            <span class="item-label__teacher">英语老师</span>
+                                                                             <span class="item-label__admin">管理员</span>
+                                                                        </div>
+                                                                    
+                                                            </div>
+                                                            <div class="list-item__ft">
+                                                                <span class="item-name">
+                                                                    刘云
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="main-list__item">
+                                                            <div class="list-item__box">
+                                                                <div class="list-item__bd">
+                                                                        <div class="item-image_box">
+                                                                                <img src="../images/teacher-header_02.png" alt="">
+                                                                        </div>
+                                                                        <div class="item-label__box part">
+                                                                            <span class="item-label__teacher">英语老师</span>
+                                                                            <span class="item-label__admin">管理员</span>
+                                                                        </div>
+                                                                        <div class="item-label__box all">
+                                                                                 <span class="item-label__headmaster" >班主任</span>
+                                                                                 <span class="item-label__teacher">英语</span>
+                                                                                 <span class="item-label__teacher">数学</span>
+                                                                                 <span class="item-label__teacher">政治</span>
+                                                                                 <span class="item-label__teacher">信息与技术</span>
+                                                                                <span class="item-label__teacher">英语老师</span>
+                                                                                 <span class="item-label__admin">管理员</span>
+                                                                            </div>
+                                                                        
+                                                                </div>
+                                                                <div class="list-item__ft">
+                                                                    <span class="item-name">
+                                                                        刘云
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="main-list__item">
+                                                                <div class="list-item__box">
+                                                                    <div class="list-item__bd">
+                                                                            <div class="item-image_box">
+                                                                                    <img src="../images/teacher-header_02.png" alt="">
+                                                                            </div>
+                                                                            <div class="item-label__box part">
+                                                                                <span class="item-label__teacher">英语老师</span>
+                                                                                <span class="item-label__admin">管理员</span>
+                                                                            </div>
+                                                                            <div class="item-label__box all">
+                                                                                     <span class="item-label__headmaster" >班主任</span>
+                                                                                     <span class="item-label__teacher">英语</span>
+                                                                                     <span class="item-label__teacher">数学</span>
+                                                                                     <span class="item-label__teacher">政治</span>
+                                                                                     <span class="item-label__teacher">信息与技术</span>
+                                                                                    <span class="item-label__teacher">英语老师</span>
+                                                                                     <span class="item-label__admin">管理员</span>
+                                                                                </div>
+                                                                            
+                                                                    </div>
+                                                                    <div class="list-item__ft">
+                                                                        <span class="item-name">
+                                                                            刘云
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                    </ul>
+                           </div>
+                           <div class="main-list__box student ">
+                                <ul class="main-list_container  " >
+                                        <li class="main-list__item">
+                                            <div class="list-item__box">
+                                                <div class="list-item__bd">
+                                                        <div class="item-image_box">
+                                                                <img src="../images/teacher-header_02.png" alt="">
+                                                        </div>
+                                                        <div class="item-label__box part">
+                                                            <span class="item-label__represent">英语课代表</span>
+                                                            <span class="item-label__monitor">班长</span>
+                                                        </div>
+                                                        
+                                                        
+                                                </div>
+                                                <div class="list-item__ft">
+                                                    <span class="item-name">
+                                                        刘云
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="main-list__item">
+                                                <div class="list-item__box">
+                                                    <div class="list-item__bd">
+                                                            <div class="item-image_box">
+                                                                    <img src="../images/teacher-header_02.png" alt="">
+                                                            </div>
+                                                            <div class="item-label__box part">
+                                                                    <span class="item-label__represent">英语课代表</span>
+                                                                    <span class="item-label__monitor">班长</span>
+                                                                </div>
+                                                    </div>
+                                                    <div class="list-item__ft">
+                                                        <span class="item-name">
+                                                            刘云
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="main-list__item">
+                                                    <div class="list-item__box">
+                                                        <div class="list-item__bd">
+                                                                <div class="item-image_box">
+                                                                        <img src="../images/teacher-header_02.png" alt="">
+                                                                </div>
+                                                                <div class="item-label__box part">
+                                                                        <span class="item-label__represent">英语课代表</span>
+                                                                        <span class="item-label__monitor">班长</span>
+                                                                    </div>
+                                                                
+                                                        </div>
+                                                        <div class="list-item__ft">
+                                                            <span class="item-name">
+                                                                刘云
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="main-list__item">
+                                                        <div class="list-item__box">
+                                                            <div class="list-item__bd">
+                                                                    <div class="item-image_box">
+                                                                            <img src="../images/teacher-header_02.png" alt="">
+                                                                    </div>
+                                                                    <div class="item-label__box part">
+                                                                            <span class="item-label__represent">英语课代表</span>
+                                                                            <span class="item-label__monitor">班长</span>
+                                                                        </div>
+                                                                    
+                                                            </div>
+                                                            <div class="list-item__ft">
+                                                                <span class="item-name">
+                                                                    刘云
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="main-list__item">
+                                                            <div class="list-item__box">
+                                                                <div class="list-item__bd">
+                                                                        <div class="item-image_box">
+                                                                                <img src="../images/teacher-header_02.png" alt="">
+                                                                        </div>
+                                                                        <div class="item-label__box part">
+                                                                                <span class="item-label__represent">英语课代表</span>
+                                                                                <span class="item-label__monitor">班长</span>
+                                                                            </div>
+                                                                        
+                                                                </div>
+                                                                <div class="list-item__ft">
+                                                                    <span class="item-name">
+                                                                        刘云
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="main-list__item">
+                                                                <div class="list-item__box">
+                                                                    <div class="list-item__bd">
+                                                                            <div class="item-image_box">
+                                                                                    <img src="../images/teacher-header_02.png" alt="">
+                                                                            </div>
+                                                                            <div class="item-label__box part">
+                                                                                    <span class="item-label__represent">英语课代表</span>
+                                                                                    <span class="item-label__monitor">班长</span>
+                                                                                </div>
+                                                                    </div>
+                                                                    <div class="list-item__ft">
+                                                                        <span class="item-name">
+                                                                            刘云
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                    </ul>
+                           </div>
+                           <div class="main-list__box parent ">
+                                <ul class="main-list_container  " >
+                                        <li class="main-list__item">
+                                            <div class="list-item__box">
+                                                <div class="list-item__bd">
+                                                        <div class="item-image_box">
+                                                                <img src="../images/teacher-header_02.png" alt="">
+                                                        </div>
+                                                        <div class="item-label__box part">
+                                                            <span class="item-label__parent">老总</span>
+                                                            <span class="item-label__parent">经理</span>
+                                                        </div>
+                                                       
+                                                </div>
+                                                <div class="list-item__ft">
+                                                    <span class="item-name">
+                                                        刘云
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="main-list__item">
+                                                <div class="list-item__box">
+                                                    <div class="list-item__bd">
+                                                            <div class="item-image_box">
+                                                                    <img src="../images/teacher-header_02.png" alt="">
+                                                            </div>
+                                                            <div class="item-label__box part">
+                                                                    <span class="item-label__parent">老总</span>
+                                                                    <span class="item-label__parent">经理</span>
+                                                                </div>
+                                                            
+                                                    </div>
+                                                    <div class="list-item__ft">
+                                                        <span class="item-name">
+                                                            刘云
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="main-list__item">
+                                                    <div class="list-item__box">
+                                                        <div class="list-item__bd">
+                                                                <div class="item-image_box">
+                                                                        <img src="../images/teacher-header_02.png" alt="">
+                                                                </div>
+                                                                <div class="item-label__box part">
+                                                                        <span class="item-label__parent">老总</span>
+                                                                        <span class="item-label__parent">经理</span>
+                                                                    </div>
+                                                                
+                                                        </div>
+                                                        <div class="list-item__ft">
+                                                            <span class="item-name">
+                                                                刘云
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="main-list__item">
+                                                        <div class="list-item__box">
+                                                            <div class="list-item__bd">
+                                                                    <div class="item-image_box">
+                                                                            <img src="../images/teacher-header_02.png" alt="">
+                                                                    </div>
+                                                                    <div class="item-label__box part">
+                                                                            <span class="item-label__parent">老总</span>
+                                                                            <span class="item-label__parent">经理</span>
+                                                                        </div>
+                                                                    
+                                                            </div>
+                                                            <div class="list-item__ft">
+                                                                <span class="item-name">
+                                                                    刘云
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="main-list__item">
+                                                            <div class="list-item__box">
+                                                                <div class="list-item__bd">
+                                                                        <div class="item-image_box">
+                                                                                <img src="../images/teacher-header_02.png" alt="">
+                                                                        </div>
+                                                                        <div class="item-label__box part">
+                                                                                <span class="item-label__parent">老总</span>
+                                                                                <span class="item-label__parent">经理</span>
+                                                                            </div>
+                                                                        
+                                                                </div>
+                                                                <div class="list-item__ft">
+                                                                    <span class="item-name">
+                                                                        刘云
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="main-list__item">
+                                                                <div class="list-item__box">
+                                                                    <div class="list-item__bd">
+                                                                            <div class="item-image_box">
+                                                                                    <img src="../images/teacher-header_02.png" alt="">
+                                                                            </div>
+                                                                            <div class="item-label__box part">
+                                                                                    <span class="item-label__parent">老总</span>
+                                                                                    <span class="item-label__parent">经理</span>
+                                                                                </div>
+                                                                            
+                                                                    </div>
+                                                                    <div class="list-item__ft">
+                                                                        <span class="item-name">
+                                                                            刘云
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                    </ul>
+                           </div>
+                            
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
