@@ -1,0 +1,34 @@
+{
+    "administrstion": [{
+        "classLogoUrl": "",
+        "period": "高中",
+        "grade_class": "三年二班",
+        "headmaster": "刘亦菲",
+        "studentNumber": 33
+    }, {
+        "classLogoUrl": "",
+        "period": "高中",
+        "grade_class": "三年二班",
+        "headmaster": "刘亦菲",
+        "studentNumber": 33
+    }],
+    "teaching": [{
+        "classLogoUrl": "",
+        "period": "高中",
+        "grade_class": "三年二班",
+        "headmaster": "刘亦菲",
+        "studentNumber": 33
+    }, {
+        "classLogoUrl": "",
+        "period": "高中",
+        "grade_class": "三年二班",
+        "headmaster": "刘亦菲",
+        "studentNumber": 33
+    }, {
+        "classLogoUrl": "",
+        "period": "高中",
+        "grade_class": "三年二班",
+        "headmaster": "刘亦菲",
+        "studentNumber": 33
+    }]
+}
